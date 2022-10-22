@@ -17,11 +17,14 @@ const btnNode = document.querySelector(".btn");
 const divNode = document.querySelector(".result");
 
 btnNode.addEventListener('click', () => {
-    const numNode = document.querySelector(".input").value;
-    if (Number(numNode) < 1 || Number(numNode) > 10 ) {
-        divNode.innerHTML = '<p>число вне диапазона от 1 до 10</p>';
+    const numNode_width = document.querySelector(".input_width").value;
+    const numNode_height = document.querySelector(".input_height").value;
+    if (Number(numNode_width) < 100 || Number(numNode_width) > 500 ) {
+        divNode.innerHTML = '<p>первое число вне диапазона от 100 до 500</p>';
+    } else if (Number(numNode_height) < 100 || Number(numNode_height) > 500 ) {
+      divNode.innerHTML = '<p>второе число вне диапазона от 100 до 500</p>';
     } else {
-        useRequest(`https://loremflickr.com/320/240?limit=${numNode}`);
+        useRequest(`https://loremflickr.com/json/g/${numNode_width}/${numNode_width}/all`);
     }
   });
 
@@ -42,7 +45,6 @@ btnNode.addEventListener('click', () => {
     xhr.onerror = function() {
       console.log('Ошибка! Статус ответа: ', xhr.status);
     };
-    
     xhr.send();
   };
   
