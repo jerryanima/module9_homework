@@ -1,14 +1,3 @@
-/*
-Вам дана заготовка и результат, который вы должны получить. 
-Ваша задача — написать код, который будет преобразовывать XML в JS-объект и выводить его в консоль.
-JS-объект:
-{
-  list: [
-    { name: 'Ivan Ivanov', age: 35, prof: 'teacher', lang: 'en' },
-    { name: 'Петр Петров', age: 58, prof: 'driver', lang: 'ru' },
-  ]
-}
-*/
 const parser = new DOMParser();
 const xmlString = `<list>
 <student>

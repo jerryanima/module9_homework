@@ -9,7 +9,7 @@ btnNode.addEventListener('click', () => {
     } else if (Number(numNode_height) < 100 || Number(numNode_height) > 500 ) {
       divNode.innerHTML = '<p>второе число вне диапазона от 100 до 500</p>';
     } else {
-        useRequest(`https://loremflickr.com/json/g/${numNode_width}/${numNode_width}/all`);
+        useRequest(`https://picsum.photos/${numNode_width}/${numNode_width}`);
     }
   });
 
@@ -32,3 +32,5 @@ function useRequest(url) {
   };
   xhr.send();
 };
+  
+  
